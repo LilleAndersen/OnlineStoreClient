@@ -1,6 +1,6 @@
 async function loadProducts()
 {
-    const products = (await axios.get(" http://localhost:5189/products/all")).data
+    const products = (await axios.get("http://localhost:5189/products/all")).data
 
 
 
