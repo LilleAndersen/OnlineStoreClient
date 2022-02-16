@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 @font-face {
     font-family: "Soni is Rocking a Semi";
-    src: url("semi.otf");
+    src: url("fonts/Semi.otf");
 }
 @font-face {
     font-family: "Pizza";
-    src: url("Organo.ttf");
+    src: url("fonts/Organo.ttf");
 }
 
 $accent-dark-black: #1A1A1D;
@@ -20,6 +20,10 @@ body
     background: $accent-dark-black;
     color: papayawhip;
     font-family: "Roboto Condensed", sans-serif;
+}
+
+#home-page
+{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,16 +169,88 @@ body
     }
 }
 
-
-td, th
+#login-btn
 {
-    border: 1px solid #dddddd;
-    padding: 8px;
+    position: absolute; // Fixed position
+    top: 0; // Bottom justified
+    right: 0; // Left justified
+    z-index: 1000; // Makes item at the top of everything
+    margin: 10px; // Margin
+    background-color: transparent; // Background transparent
+    width: 40px;
 }
 
-tr:nth-child(even)
+#register-btn
 {
-    background-color: #dddddd;
+    position: absolute; // Fixed position
+    top: 0; // Bottom justified
+    right: 160px; // Left justified
+    z-index: 1000; // Makes item at the top of everything
+    margin: 10px; // Margin
+    background-color: transparent; // Background transparent
+    width: 40px;
+}
+
+#profile-logout-cluster
+{
+    display: none;
+
+    #profile-btn
+    {
+        position: absolute; // Fixed position
+        top: 0; // Bottom justified
+        right: 0px; // Left justified
+        z-index: 1000; // Makes item at the top of everything
+        margin: 10px; // Margin
+        background-color: transparent; // Background transparent
+        width: 40px;
+    }
+
+    #logout-btn
+    {
+        position: absolute; // Fixed position
+        top: 0; // Bottom justified
+        right: 160px; // Left justified
+        z-index: 1000; // Makes item at the top of everything
+        margin: 10px; // Margin
+        background-color: transparent; // Background transparent
+        width: 40px;
+    }
+}
+
+#back-btn
+{
+    position: absolute; // Fixed position
+    top: 0; // Bottom justified
+    left: 0; // Left justified
+    z-index: 1000; // Makes item at the top of everything
+    margin: 10px; // Margin
+    background-color: transparent; // Background transparent
+    width: 40px;
+}
+
+#invalid
+{
+    display: none;
+    position: absolute;
+    margin-top: 350px;
+    color: $accent-middle-pink;
+}
+
+#wrong
+{
+    display: none;
+    position: absolute;
+    margin-top: 350px;
+    color: $accent-dark-pink;
+}
+
+#correct
+{
+    display: none;
+    position: absolute;
+    margin-top: 350px;
+    color: green;
 }
 
 .btn
@@ -189,4 +265,31 @@ tr:nth-child(even)
     min-width: 100px;
     display: inline-flex;
     justify-content: center;
+}
+
+form
+{
+    display:grid;
+    place-items:center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    input
+    {
+
+        padding: 15px;
+        margin: 10px;
+        text-align: center;
+        font-size: 25px;
+        border-radius: 15px;
+    }
+
+    a {
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }

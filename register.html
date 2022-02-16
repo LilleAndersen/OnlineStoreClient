@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>OHentai</title>
+    </head>
+    <body onload="resetShoot()">
+        <div id="login-section">
+            <form>
+                <label for="first-name"></label><input type="text" id="first-name" name="username" placeholder="First Name"><br>
+                <label for="last-name"></label><input type="text" id="last-name" name="password" placeholder="Last Name"><br>
+                <label for="username"></label><input type="text" id="username" name="password" placeholder="Username"><br>
+                <label for="email"></label><input type="text" id="email" name="password" placeholder="Email"><br>
+                <label for="phone-number"></label><input type="text" id="phone-number" name="password" placeholder="Phone Number"><br>
+                <label for="pfp"></label><input type="text" id="pfp" name="password" placeholder="Pfp"><br>
+                <label for="password"></label><input type="text" id="password" name="password" placeholder="Password"><br>
+                <label for="access-level"></label><input type="text" id="access-level" name="password" placeholder="Access Level"><br>
+                <a class="btn" onclick="newUser()">Submit</a>
+                <h2 id="invalid">Please fill out all of the fields</h2>
+                <h2 id="incorrect">Wrong you fucking sad bitchfuck!</h2>
+                <h2 id="correct">yeans</h2>
+            </form>
+
+            <div id="profile"></div>
+
+        </div>
+
+        <a id="back-btn" class="btn" href="/">back</a>
+
+        <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+    </body>
+</html>
