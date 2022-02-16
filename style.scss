@@ -199,7 +199,7 @@ body
     {
         position: absolute; // Fixed position
         top: 0; // Bottom justified
-        right: 0px; // Left justified
+        right: 0; // Left justified
         z-index: 1000; // Makes item at the top of everything
         margin: 10px; // Margin
         background-color: transparent; // Background transparent
@@ -215,6 +215,7 @@ body
         margin: 10px; // Margin
         background-color: transparent; // Background transparent
         width: 40px;
+        cursor: pointer;
     }
 }
 

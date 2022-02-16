@@ -16,7 +16,9 @@ let pfp;
 
 let password;
 
-let accessLevel
+let accessLevel;
+
+let newUserStatus
 
 function resetShoot() {
     document.querySelector("#invalid").style.display = "none";
@@ -70,8 +72,37 @@ async function verifyCredentials() {
     localStorage['fullName'] = `${user.firstName} ${user.lastName}`;
 }
 
-function newUser() {
+async function newUser() {
+    firstName = document.querySelector("#first-name").value;
+    lastName = document.querySelector("#last-name").value;
+    username = document.querySelector("#username").value;
+    email = document.querySelector("#email").value;
+    phoneNumber = document.querySelector("#phone-number").value;
+    pfp = document.querySelector("#pfp").value;
+    password = document.querySelector("#password").value;
 
+    console.log(firstName, lastName, username, email, phoneNumber, pfp, password)
+
+    try {
+        console.log(await axios({
+            method: 'post',
+            url: 'https://api.little.yessness.com:5000/users',
+            data: {
+                FirstName: firstName,
+                LastName: lastName,
+                Username: username,
+                Email: email,
+                PhoneNumber: phoneNumber,
+                Pfp: pfp,
+                Password: password,
+                AccessLevel: 0
+            }
+        }));
+    }
+    catch {
+        console.error();
+        console.log(onerror)
+    }
 }
 
 async function getUser() {
