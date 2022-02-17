@@ -1,3 +1,5 @@
+loadProducts()
+
 async function loadProducts()
 {
     const products = (await axios.get("https://api.little.yessness.com:5000/products/all")).data
@@ -15,7 +17,7 @@ async function loadProducts()
                     <p class="card_price">${product.price},00 kr</p>
                     <p class="card_stock">${product.stock} på lager</p>
                 </div>
-                <a class="btn" href="../index.html">Add to cart</a>
+                <a class="btn" onclick="addProductToOrder()">Add to cart</a>
             </div>
         `;
     }
@@ -33,4 +35,6 @@ async function loadProducts()
             </tr>*/
 }
 
-loadProducts()
+function addProductToOrder(productId) {
+    
+}

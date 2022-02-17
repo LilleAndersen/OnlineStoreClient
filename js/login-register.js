@@ -84,7 +84,7 @@ async function newUser() {
     console.log(firstName, lastName, username, email, phoneNumber, pfp, password)
 
     try {
-        console.log(await axios({
+        await axios ({
             method: 'post',
             url: 'https://api.little.yessness.com:5000/users',
             data: {
@@ -97,7 +97,7 @@ async function newUser() {
                 Password: password,
                 AccessLevel: 0
             }
-        }));
+        });
     }
     catch {
         console.error();
