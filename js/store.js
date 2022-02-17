@@ -1,3 +1,11 @@
+let order = [];
+
+let cart = [];
+
+let product = [];
+
+let number = 1;
+
 loadProducts()
 
 async function loadProducts()
@@ -17,7 +25,7 @@ async function loadProducts()
                     <p class="card_price">${product.price},00 kr</p>
                     <p class="card_stock">${product.stock} på lager</p>
                 </div>
-                <a class="btn" onclick="addProductToOrder()">Add to cart</a>
+                <a class="btn" onclick="addProductToOrder(${product.id}, '${product.name}', 1)">Add to cart</a>
             </div>
         `;
     }
@@ -35,6 +43,27 @@ async function loadProducts()
             </tr>*/
 }
 
-function addProductToOrder(productId) {
-    
+async function addProductToOrder(productId, productName, quantity) {
+    // (await axios.get(`https://api.little.yessness.com:5000/products?id=${productId}`)).data
+
+    product = [];
+
+    product.push(productId, productName, quantity);
+
+    cart.push(product)
 }
+
+function printCard() {
+    console.log(cart);
+}
+
+// Make array with all products
+// Set quantity of each product to zero
+// Change quantity when something is added to cart
+// If quantity of certain product isnt zero show in shopping kart
+// Have static id's of all quantities
+
+
+// Loop through every item
+// Check if item is divisible by 3
+// If yes do code if not move on
