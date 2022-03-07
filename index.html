@@ -2,8 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles/style.css">
         <title>Neo</title>
+
+        <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
     </head>
     <body onload="checkIfLoggedIn()">
         <div id="home-page">
@@ -12,23 +14,19 @@
             </div>
 
             <div id="frontpage-info">
-                <p>
-                    Welcome to Neo Online!
-                    <br><br>
-                    This is a Frontend for an imaginary online store.
-                    <br><br>
-                    Your one stop shop for everything you would need.
-
-                    You want real estate from Mars? We have it! You want not-a-flamethrower? We have it! You want Discord stock? We have it!
-
-                    We have competitive prices and revolutionary ideas.
-                </p>
+                <zero-md src="/markdown/home.md">
+                    <template>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@4/github-markdown.min.css">
+                        <link rel="stylesheet" type="text/css" href="/styles/markdown.css">
+                    </template>
+                </zero-md>
             </div>
 
             <div id="frontpage-mainmenu">
-                <a id="store" class="btn" href="store.html">store</a>
-                <a id="privacy" class="btn" href="privacy.html">privacy</a>
-                <a id="my-page" class="btn" href="">my page</a>
+                <a id="store" class="btn" href="/store.html">store</a>
+                <a id="privacy" class="btn" href="/privacy.html">privacy</a>
+                <a id="my-page" class="btn" href="/">my page</a>
+                <a id="" class="btn" onclick="checkIfLoggedInCart('cart')">cart</a>
             </div>
         </div>
 

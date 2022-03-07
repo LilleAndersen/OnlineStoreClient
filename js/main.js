@@ -44,11 +44,27 @@ function checkIfLoggedIn() {
     }
 }
 
+function checkIfLoggedInCart(state) {
+    token = localStorage['token'] || '';
+
+    if (state === 'cart') {
+        if (token.length !== 0) {
+            window.location.href = '/cart.html';
+        } else {
+            window.location.href = '/register.html';
+        }
+    }
+}
+
 // Function to log out the user and to make its logged out no matter.
 function logOut() {
     localStorage['token'] = "";
 
     localStorage['fullName'] = "";
+
+    cart = [];
+
+    localStorage['cart'] = cart;
 
     checkIfLoggedIn();
 }

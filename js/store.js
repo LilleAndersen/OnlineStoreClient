@@ -1,4 +1,4 @@
-let api = 'https://localhost:7252';
+let api = 'https://api.little.yessness.com:5000';
 
 let cart = [];
 

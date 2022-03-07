@@ -7,5 +7,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="axios" level="application" />
     <orderEntry type="library" name="axios" level="application" />
+    <orderEntry type="library" name="zero-md" level="application" />
+    <orderEntry type="library" name="github-markdown" level="application" />
   </component>
 </module>
