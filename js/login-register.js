@@ -193,11 +193,11 @@ async function deleteUser() {
 // Delete user - Done
 // Make it so that you have to be logged to put things into cart - Done
 // Finish personvern on my part - Done
+// Publish (ship) to api - Done
 
 // Add search on store?
 // Prepare to make documentation (commenting, plan and other shit)
 // Final touches on api (encrypt things, change createorder from needing user id to user token)
-// Ship to api
 // MAKE CAT FINISH PERSONVERN THING
 // Analyse security threat
 // Change quantity of what im buying
