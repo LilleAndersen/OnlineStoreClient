@@ -22,6 +22,11 @@ body
     font-family: "Roboto Condensed", sans-serif;
 }
 
+a
+{
+    user-select: none;
+}
+
 #home-page
 {
     display: flex;
