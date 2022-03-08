@@ -1,26 +1,3 @@
-<!-- Output copied to clipboard! -->
-
-<!-----
-
-Yay, no errors, warnings, or alerts!
-
-Conversion time: 0.453 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β33
-* Mon Mar 07 2022 09:22:24 GMT-0800 (PST)
-* Source doc: Personvern Rettigheter Omskrevet for Nettside
------>
-
 # Innsamlet innformasjon
 
 Vi som en butikk samler inn litt innformasjon om kundene våre. Alt vi ønsker er at
@@ -35,10 +12,10 @@ interesse av kunden å det siste vi ønsker er uførnøyde kunder.
 - Adresse (Land, Postnummer/Poststed, og Adresse)
 
 Vi samler inn fornavn og etternavn for å identifisere kunden. I tillegg blir det 
-samlet inn for frakt av varer, alle pakker må ha et navn og nummer som tilhører 
+samlet inn for frakt av varer, alle pakker må jo ha et navn og nummer som tilhører 
 i tilfelle pakken er endt opp feil plass eller lignende.
 Telefon nummer er for tilbakestilling av passord og videre identifisering.
-Epost blir innsamlet for nyhetsbrev og tilbakestilling av passord.
+Vi samler inn for nyhetsbrev og tilbakestilling av passord.
 I tillegg samler vi inn adresse for å kunne sende pakken til deg.
 
 Om du har spørsmål angående personvern eller innsamlet innformasjon, 
