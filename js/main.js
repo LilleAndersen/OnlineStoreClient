@@ -23,7 +23,7 @@ let password;
 let status;
 
 // Logs the token
-console.log(token)
+//console.log(token)
 
 // Function to check i've a user is logged in or not
 function checkIfLoggedIn() {
@@ -72,7 +72,7 @@ function logOut() {
 async function loadProfile() {
     await getUser()
 
-    console.log(user)
+    //console.log(user)
 
     document.querySelector("#profile-page").innerHTML += `
             <div id="card-profile">

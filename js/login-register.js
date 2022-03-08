@@ -23,7 +23,7 @@ async function verifyCredentials() {
         })).data;
     }
     catch {
-        console.error();
+        //console.error();
         verifyTextfield("initial", "none", "none")
     }
 
@@ -37,7 +37,7 @@ async function verifyCredentials() {
 
     verifyTextfield("none", "none", "initial")
 
-    console.log(user);
+    //console.log(user);
 
     window.location.href = '/';
 
@@ -53,7 +53,7 @@ async function newUser() {
     pfp = document.querySelector("#pfp").value;
     password = document.querySelector("#password").value;
 
-    console.log(firstName, lastName, username, email, phoneNumber, pfp, password)
+    //console.log(firstName, lastName, username, email, phoneNumber, pfp, password)
 
     try {
         await axios ({
@@ -72,8 +72,8 @@ async function newUser() {
         });
     }
     catch {
-        console.error();
-        console.log(onerror)
+        //console.error();
+        //console.log(onerror)
     }
 
     window.location.href = '/';
@@ -100,7 +100,7 @@ async function loadWholeProfile() {
 
     const allOrders = (await axios.get(api + '/orders/user?id=' + userId)).data
 
-    console.log(allOrders)
+    //.log(allOrders)
 
     for (const order of allOrders)
     {
@@ -149,7 +149,7 @@ async function changeStatus(id) {
         })).data;
     }
     catch {
-        console.error();
+        //console.error();
     }
 
     document.querySelector("#id" + id).innerHTML = state;
@@ -158,7 +158,7 @@ async function changeStatus(id) {
 async function deleteUser() {
     username = window.prompt("Enter your username (NOTE this will permanently delete your user): ");
 
-    console.log(username)
+    //console.log(username)
 
     try {
         await axios({
@@ -171,7 +171,7 @@ async function deleteUser() {
 
     }
     catch {
-        console.error();
+        //console.error();
     }
 
     // var r=confirm("Are you sure!");
