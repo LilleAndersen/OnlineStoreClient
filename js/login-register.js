@@ -96,7 +96,9 @@ async function getUser() {
 async function loadWholeProfile() {
     await loadProfile()
 
-    const allOrders = (await axios.get(api + '/orders/user?id=7')).data
+    userId = localStorage['userId'];
+
+    const allOrders = (await axios.get(api + '/orders/user?id=' + userId)).data
 
     console.log(allOrders)
 
