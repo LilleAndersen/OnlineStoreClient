@@ -32,7 +32,7 @@ async function loadProducts()
 
     const products = (await axios.get(api + "/products/all")).data
 
-    console.log(products)
+    //console.log(products)
 
     for (const product of products)
     {
@@ -94,7 +94,7 @@ async function addProductToOrder(productId, productName, productDescription, pri
 }
 
 function printCart() {
-    console.log(cart)
+    //console.log(cart)
 }
 
 function loadCart() {
@@ -119,7 +119,7 @@ function loadCart() {
 
 function calculatePrice() {
     totalPrice = JSON.parse(localStorage['totalPrice']);
-    console.log(totalPrice)
+    //console.log(totalPrice)
 }
 
 async function newOrder() {
@@ -130,7 +130,7 @@ async function newOrder() {
 
 
 
-    console.log(addressName, addressLine, postalNumber, country)
+    //console.log(addressName, addressLine, postalNumber, country)
 
     try {
         addressId = (await axios ({
@@ -145,10 +145,10 @@ async function newOrder() {
         })).data;
     }
     catch {
-        console.error();
+        //console.error();
     }
 
-    console.log(addressId)
+    //console.log(addressId)
 
     try {
         orderId = (await axios ({
@@ -157,11 +157,11 @@ async function newOrder() {
         })).data;
     }
     catch {
-        console.error();
+        //console.error();
     }
 
     for (const product of cart) {
-        console.log(product.id)
+        //console.log(product.id)
         try {
             link = (await axios ({
                 method: 'post',
@@ -170,8 +170,7 @@ async function newOrder() {
 
         }
         catch {
-            console.error();
-            console.error();
+            //console.error();
         }
     }
 
