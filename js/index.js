@@ -1,0 +1,1 @@
+checkIfLoggedIn() // Calls function to check if logge in

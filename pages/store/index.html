@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../styles/style.css">
+        <title>Neo</title>
+    </head>
+    <body>
+        <div id="home-page" >
+            <div id="header">
+                <a id="header-button" href="/"><h1>Neo Online</h1></a>
+            </div>
+
+            <div id="product-list">
+
+            </div>
+
+            <div id="frontpage-mainmenu">
+                <a id="store" class="btn" href="index.html">store</a>
+                <a id="privacy" class="btn" href="../privacy/index.html">privacy</a>
+                <a id="my-page" class="btn" href="/">home</a>
+                <a id="" class="btn" onclick="checkIfLoggedInCart('cart')">cart</a>
+            </div>
+        </div>
+
+        <div id="login-register-cluster">
+            <a id="login-btn" class="btn" href="../login/">log in</a>
+            <a id="register-btn" class="btn" href="../register/">register</a>
+        </div>
+
+        <div id="profile-logout-cluster">
+            <a id="profile-btn" class="btn" href="../profile/">profile Name</a>
+            <a id="logout-btn" class="btn" onclick="logOut()">log out</a>
+        </div>
+
+        <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript" src="../../js/main.js"></script>
+        <script type="text/javascript" src="../../js/store.js"></script>
+    </body>
+</html>

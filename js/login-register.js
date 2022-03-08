@@ -1,9 +1,13 @@
+resetShoot()
+
+// Function to reset login results
 function resetShoot() {
     document.querySelector("#invalid").style.display = "none";
     document.querySelector("#incorrect").style.display = "none";
     document.querySelector("#correct").style.display = "none";
 }
 
+// Changes login results from invalid, incorrect and correct
 function verifyTextfield(invalid, incorrect, correct) {
 
     document.querySelector("#invalid").style.display = invalid;
@@ -11,7 +15,9 @@ function verifyTextfield(invalid, incorrect, correct) {
     document.querySelector("#correct").style.display = correct;
 }
 
+// Verifies the credentials provided with the apico
 async function verifyCredentials() {
+    // Tries given commands and catches the errors if any occur
     try {
         token = (await axios({
             method: 'post',
@@ -27,6 +33,7 @@ async function verifyCredentials() {
         verifyTextfield("initial", "none", "none")
     }
 
+    // Stores token in localstorage
     localStorage['token'] = token; // only strings
 
     if (token.length === 0) {
@@ -37,14 +44,16 @@ async function verifyCredentials() {
 
     verifyTextfield("none", "none", "initial")
 
-    //console.log(user);
-
+    // Changes user page to the specified page
     window.location.href = '/';
 
+    // Stores full name in localstorage
     localStorage['fullName'] = `${user.firstName} ${user.lastName}`;
 }
 
+// Function to add a new user
 async function newUser() {
+    // Grabs all values from necessary fields
     firstName = document.querySelector("#first-name").value;
     lastName = document.querySelector("#last-name").value;
     username = document.querySelector("#username").value;
@@ -53,8 +62,7 @@ async function newUser() {
     pfp = document.querySelector("#pfp").value;
     password = document.querySelector("#password").value;
 
-    //console.log(firstName, lastName, username, email, phoneNumber, pfp, password)
-
+    // Tries given commands and catches the errors if any occur
     try {
         await axios ({
             method: 'post',
@@ -72,119 +80,12 @@ async function newUser() {
         });
     }
     catch {
-        //console.error();
-        //console.log(onerror)
+        console.error();
+        console.log(onerror)
     }
 
-    window.location.href = '/';
-}
-
-async function getUser() {
-    token = localStorage['token']
-
-    user = (await axios({
-        method: 'get',
-        url: api + '/users',
-        headers: {
-            token: token
-        }
-    })).data;
-
-    localStorage['userId'] = user.id;
-}
-
-async function loadWholeProfile() {
-    await loadProfile()
-
-    userId = localStorage['userId'];
-
-    const allOrders = (await axios.get(api + '/orders/user?id=' + userId)).data
-
-    //.log(allOrders)
-
-    for (const order of allOrders)
-    {
-        document.querySelector("#all-orders-section").innerHTML += `
-            <table id="single-order-section">
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Username</th>
-                    <th>Shipping Information</th>
-                    <th>Total price</th>
-                   
-                    <th>Timestamp</th>
-                    <th>Status</th>
-                    <th>Change status</th>
-                </tr>
-                <tr>
-                    <td>${order.id}</td>
-                    <td>${order.address.addressName}</td>
-                    <td>${order.user.credentials.username}</td>
-                    <td>${order.address.addressLine}, ${order.address.postalNumber.number} ${order.address.postalNumber.place}, ${order.address.country}</td>
-                    <td>${order.totalPrice}</td>
-                    <td>${order.orderTimestamp}</td>
-                    <td id="id${order.id}">${order.status}</td>
-                    <td>
-                        <select id="status-options" onchange="changeStatus(${order.id})">
-                            <option value="Unset">Unset</option>
-                            <option value="Fulfilled">Fulfilled</option>
-                            <option value="Unfulfilled">Unfulfilled</option>
-                            <option value="Cancelled">Cancelled</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-        `;
-    }
-}
-
-async function changeStatus(id) {
-    let state = document.querySelector("#status-options").value;
-
-    try {
-        status = (await axios ({
-            method: 'post',
-            url: api + '/orders/update?status=' + state + '&id=' + id
-        })).data;
-    }
-    catch {
-        //console.error();
-    }
-
-    document.querySelector("#id" + id).innerHTML = state;
-}
-
-async function deleteUser() {
-    username = window.prompt("Enter your username (NOTE this will permanently delete your user): ");
-
-    //console.log(username)
-
-    try {
-        await axios({
-            method: 'delete',
-            url: api + '/users',
-            headers: {
-                username: username
-            }
-        });
-
-    }
-    catch {
-        //console.error();
-    }
-
-    // var r=confirm("Are you sure!");
-    // if (r===true)
-    // {
-    //     x="You deleted your account!";
-    //
-    //
-    // }
-    // else
-    // {
-    //     x="You account is still here!";
-    // }
+    // Changes user page to the specified page
+    window.location.href = '../pages/privacy/';
 }
 
 // Add register on login and reverse - Done
@@ -196,12 +97,13 @@ async function deleteUser() {
 // Make it so that you have to be logged to put things into cart - Done
 // Finish personvern on my part - Done
 // Publish (ship) to api - Done
-// Analyse security threat
+// Analyse security threat - Done
 
-// Add search on store?
-// Prepare to make documentation (commenting, plan and other shit)
-// Final touches on api (encrypt things, change createorder from needing user id to user token)
-// MAKE CAT FINISH PERSONVERN THING
-// Change quantity of what im buying
-// Edit user from page
-// Get responses from mom, templeos and firstgraders
+// Add search on store? - Prob not
+// Prepare to make documentation (commenting, plan and other shit) - doing
+// Final touches on api (encrypt things, change createorder from needing user id to user token) - WEDNESDAY AND THURSDAY
+// MAKE CAT FINISH PERSONVERN THING - HE SAID HE IS GOING TO DO IT ON TUESDAY
+// Change quantity of what im buying? - If i have time
+// Edit user from page? - Prob not
+// Get responses from mom, templeos and firstgraders - doing
+// Make cart load on every page

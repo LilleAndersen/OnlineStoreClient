@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../styles/style.css">
+        <title>Neo</title>
+    </head>
+    <body>
+        <div id="login-section">
+            <form id="login-form">
+                <label for="first-name"></label><input type="text" id="first-name" name="username" placeholder="First Name"><br>
+                <label for="last-name"></label><input type="text" id="last-name" name="password" placeholder="Last Name"><br>
+                <label for="username"></label><input type="text" id="username" name="password" placeholder="Username"><br>
+                <label for="email"></label><input type="text" id="email" name="password" placeholder="Email"><br>
+                <label for="phone-number"></label><input type="text" id="phone-number" name="password" placeholder="Phone Number"><br>
+                <label for="pfp"></label><input type="text" id="pfp" name="password" placeholder="Pfp"><br>
+                <label for="password"></label><input type="password" id="password" name="password" placeholder="Password"><br>
+                <a class="btn" onclick="newUser()">Submit</a>
+                <h2 id="invalid">Please fill out all of the fields</h2>
+                <h2 id="incorrect">Incorrect username or passord</h2>
+                <h2 id="correct">Correct</h2>
+            </form>
+        </div>
+
+        <h1 id="register-now-text">Already have an account? Login <a href="../login/">here</a></h1>
+
+        <a id="back-btn" class="btn" href="/">back</a>
+
+        <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript" src="../../js/login-register.js"></script>
+        <script type="text/javascript" src="../../js/main.js"></script>
+    </body>
+</html>

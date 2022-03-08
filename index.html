@@ -7,10 +7,10 @@
 
         <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
     </head>
-    <body onload="checkIfLoggedIn()">
+    <body>
         <div id="home-page">
             <div id="header">
-                <h1>Neo Online</h1>
+                <a id="header-button" href="/"><h1>Neo Online</h1></a>
             </div>
 
             <div id="frontpage-info">
@@ -23,24 +23,24 @@
             </div>
 
             <div id="frontpage-mainmenu">
-                <a id="store" class="btn" href="/store.html">store</a>
-                <a id="privacy" class="btn" href="/privacy.html">privacy</a>
+                <a id="store" class="btn" href="/pages/store/">store</a>
+                <a id="privacy" class="btn" href="/pages/privacy/">privacy</a>
                 <a id="" class="btn" onclick="checkIfLoggedInCart('cart')">cart</a>
             </div>
         </div>
 
         <div id="login-register-cluster">
-            <a id="login-btn" class="btn" href="login.html">log in</a>
-            <a id="register-btn" class="btn" href="register.html">register</a>
+            <a id="login-btn" class="btn" href="pages/login/">log in</a>
+            <a id="register-btn" class="btn" href="pages/register/">register</a>
         </div>
 
         <div id="profile-logout-cluster">
-            <a id="profile-btn" class="btn" href="profile.html">profile Name</a>
+            <a id="profile-btn" class="btn" href="pages/profile/">profile Name</a>
             <a id="logout-btn" class="btn" onclick="logOut()">log out</a>
         </div>
 
         <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script type="text/javascript" src="js/login-register.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript" src="/js/index.js"></script>
     </body>
 </html>

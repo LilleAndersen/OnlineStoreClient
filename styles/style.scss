@@ -408,3 +408,35 @@ a
     }
 }
 
+#car
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+}
+
+#header-button
+{
+    user-select: none;
+    text-decoration: none;
+    border: none;
+    color: papayawhip;
+}

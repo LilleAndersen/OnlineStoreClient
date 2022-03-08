@@ -1,5 +1,4 @@
 // Initializes variables
-
 let fullName;
 
 let token;
@@ -22,8 +21,25 @@ let password;
 
 let status;
 
-// Logs the token
-//console.log(token)
+let api = 'https://api.little.yessness.com:5000';
+
+let cart = [];
+
+let addressLine;
+
+let addressName;
+
+let postalNumber;
+
+let country;
+
+let addressId;
+
+let userId = localStorage['userId'];
+
+let orderId;
+
+let link;
 
 // Function to check i've a user is logged in or not
 function checkIfLoggedIn() {
@@ -44,14 +60,15 @@ function checkIfLoggedIn() {
     }
 }
 
+// Function to check if i have logged in or not when i click on the cart button.
 function checkIfLoggedInCart(state) {
     token = localStorage['token'] || '';
 
     if (state === 'cart') {
         if (token.length !== 0) {
-            window.location.href = '/cart.html';
+            window.location.href = '/pages/cart/'; // If logge in take to cart
         } else {
-            window.location.href = '/register.html';
+            window.location.href = '/pages/login/'; // If not logged in takes to login page
         }
     }
 }
@@ -69,20 +86,17 @@ function logOut() {
     checkIfLoggedIn();
 }
 
-async function loadProfile() {
-    await getUser()
+// Function to get the user from api and loads token (if available from localstorage)
+async function getUser() {
+    token = localStorage['token']
 
-    //console.log(user)
+    user = (await axios({
+        method: 'get',
+        url: api + '/users',
+        headers: {
+            token: token
+        }
+    })).data;
 
-    document.querySelector("#profile-page").innerHTML += `
-            <div id="card-profile">
-                <div>
-                    <img id="pfp" src="${user.pfp}" alt="smh">
-                    <p id="name">${user.firstName} ${user.lastName}</p>
-                    <p id="username">${user.credentials.username}</p>
-                    <p id="email">${user.email}</p>
-                    <p id="number">+47 ${user.number}</p>
-                </div>
-            </div>
-        `;
+    localStorage['userId'] = user.id;
 }
