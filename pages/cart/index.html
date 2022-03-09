@@ -8,13 +8,11 @@
     <body>
         <div id="home-page">
             <div id="header">
-                <a id="header-button" href="/"><h1>Neo Online</h1></a>
+                <a id="header-button" href="/"><h1>Neo Cart</h1></a>
             </div>
 
             <div id="car">
-                <h1>Cart</h1> <br>
-                <h1>Total price: <span id="totalPrice"></span></h1> <br>
-
+                <h1>Total price: <span id="totalPrice"></span> kr</h1>
                 <div id="cart">
                     <table id="single-order-section">
                         <tr>
@@ -24,11 +22,10 @@
                         </tr>
                     </table>
                 </div>
-                <br>
                 <form id="shipping-cart-form">
                     <label for="addressName"></label><input type="text" id="addressName" name="addressName" placeholder="Address Name"><br>
                     <label for="addressLine"></label><input type="text" id="addressLine" name="addressLine" placeholder="Address Line"><br>
-                    <label for="postalNumber"></label><input type="text" id="postalNumber" name="postalNumber" placeholder="Postal Number"><br>
+                    <label for="postalNumber"></label><input type="text" id="postalNumber" name="postalNumber" placeholder="Postal Number" maxlength="4"><br>
                     <p>NB! bruk 9999 for postnummer, ikke alle postnummer er fungerende.</p>
                     <label for="country"></label><input type="text" id="country" name="country" placeholder="Country"><br>
                     <a class="btn" onclick="newOrder()">Submit</a>

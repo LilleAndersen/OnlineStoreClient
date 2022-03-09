@@ -14,7 +14,6 @@ function loadCart() {
                     <td>${product.product.name}</td>
                     <td>${product.product.description}</td>
                     <td>${product.quantity}</td>
-                    
                 </tr>
             
         `;
@@ -33,6 +32,8 @@ async function newOrder() {
     // Tries given commands and catches the errors if any occur
     try {
         addressId = (await axios ({
+
+            // API request with axios. Post request where the url field describes where the request should go and the data field what should be in it.
             method: 'post',
             url: api + '/orders/new/addresses',
             data: {
@@ -44,7 +45,7 @@ async function newOrder() {
         })).data;
     }
     catch {
-        //console.error();
+        console.error();
     }
 
     //console.log(addressId)
@@ -52,6 +53,8 @@ async function newOrder() {
     // Tries given commands and catches the errors if any occur
     try {
         orderId = (await axios ({
+
+            // API request with axios. Post request where the url field describes where the request should go and what should be in it.
             method: 'post',
             url: api + '/orders/new?id=' + userId + '&addressId=' + addressId + '&totalPrice=' + totalPrice
         })).data;
@@ -62,7 +65,8 @@ async function newOrder() {
 
     // Tries given commands and catches the errors if any occur
     for (const product of cart) {
-        //console.log(product.id)
+
+        // API request with axios. Post request where the url field describes where the request should go and what should be in it.
         try {
             link = (await axios ({
                 method: 'post',
@@ -71,17 +75,21 @@ async function newOrder() {
 
         }
         catch {
-            //console.error();
+            console.error();
         }
     }
 
-    cart = []; // Clears cart
-    totalPrice = 0; // Clears totalprice
+    if (link === false) {
+        alert("Something went wrong with the order, please try again!")
+    } else {
+        cart = []; // Clears cart
+        totalPrice = 0; // Clears totalprice
 
-    // Saves new values in localstorage
-    localStorage['cart'] = cart;
-    localStorage['totalPrice'] = totalPrice;
+        // Saves new values in localstorage
+        localStorage['cart'] = cart;
+        localStorage['totalPrice'] = totalPrice;
 
-    // Changes page
-    window.location.href = '../pages/store/';
+        // Changes page
+        window.location.href = '/pages/store/';
+    }
 }

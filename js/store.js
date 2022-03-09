@@ -1,5 +1,5 @@
 // Loads totalprice fronm localstorage
-let totalPrice = JSON.parse(localStorage['totalPrice'] || 0);
+
 
 // Calls function to loadProducts
 loadProducts()
@@ -23,7 +23,15 @@ async function loadProducts()
                     <p class="card_price">${product.price},00 kr</p>
                     <p class="card_stock">${product.stock} på lager</p>
                 </div>
-                <a class="btn" onclick="addProductToOrder(${product.id}, '${product.name}', '${product.description}', ${product.price}) ">Add to cart</a>
+                <a class="btn " onclick="addProductToOrder(${product.id}, '${product.name}', '${product.description}', ${product.price}) ">Add to cart</a>
+<!--                <div class="tooltip">-->
+<!--                    Add to cart-->
+<!--                    <div class="tooltiptext">-->
+<!--                        <span >-->
+<!--                            Added to cart-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         `;
     }
@@ -32,8 +40,10 @@ async function loadProducts()
 // Function to add a product to the order
 async function addProductToOrder(productId, productName, productDescription, price) {
 
+    //window.alert("Added to cart");
+
     if (token.length === 0) {
-        window.location.href = '../pages/register/';
+        window.location.href = '/pages/register/';
     } else {
         let saved = false;
 
@@ -50,6 +60,8 @@ async function addProductToOrder(productId, productName, productDescription, pri
         // Adds product to cart
         if (!saved) {
             cart.push({product:{id: productId, name: productName, description: productDescription}, quantity: 1})
+            totalPrice = totalPrice + price;
+            localStorage['totalPrice'] = JSON.stringify(totalPrice);
         }
 
         // Saves cart and total price to localStorage
@@ -58,3 +70,19 @@ async function addProductToOrder(productId, productName, productDescription, pri
     }
 }
 
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
+// let tooltip = document.querySelector('.tooltip')
+//
+// tooltip.addEventListener('click', async function () {
+//     if (this.classList.contains('active')) {
+//         this.classList.remove('active');
+//     } else {
+//         this.classList.add('active');
+//         await delay(500);
+//         this.classList.remove('active');
+//     }
+//
+// });

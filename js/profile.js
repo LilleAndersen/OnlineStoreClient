@@ -65,6 +65,8 @@ async function changeStatus(id) {
 
     // Tries given commands and catches the errors if any occur
     try {
+
+        // API request with axios. Post request where the url field describes where the request should go and what should be in it.
         status = (await axios ({
             method: 'post',
             url: api + '/orders/update?status=' + state + '&id=' + id
@@ -83,6 +85,8 @@ async function deleteUser() {
 
     // Tries given commands and catches the errors if any occur
     try {
+
+        // API request with axios. Post request where the url field describes where the request should go and the headers field what should be in it.
         await axios({
             method: 'delete',
             url: api + '/users',

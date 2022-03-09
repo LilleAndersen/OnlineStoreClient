@@ -25,6 +25,12 @@ let api = 'https://api.little.yessness.com:5000';
 
 let cart = [];
 
+try {
+    cart = JSON.parse(localStorage['cart']);
+} catch {}
+
+let totalPrice = JSON.parse(localStorage['totalPrice'] || 0);
+
 let addressLine;
 
 let addressName;

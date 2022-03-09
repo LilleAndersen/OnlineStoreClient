@@ -19,6 +19,8 @@ function verifyTextfield(invalid, incorrect, correct) {
 async function verifyCredentials() {
     // Tries given commands and catches the errors if any occur
     try {
+
+        // API request with axios. Post request where the url field describes where the request should go and the data field what should be in it.
         token = (await axios({
             method: 'post',
             url: api + '/auth/verify',
@@ -64,6 +66,8 @@ async function newUser() {
 
     // Tries given commands and catches the errors if any occur
     try {
+
+        // API request with axios. Post request where the url field describes where the request should go and the data field what should be in it.
         await axios ({
             method: 'post',
             url: api + '/users',
@@ -85,7 +89,7 @@ async function newUser() {
     }
 
     // Changes user page to the specified page
-    window.location.href = '../pages/privacy/';
+    window.location.href = '/pages/privacy/';
 }
 
 // Add register on login and reverse - Done
@@ -106,4 +110,3 @@ async function newUser() {
 // Change quantity of what im buying? - If i have time
 // Edit user from page? - Prob not
 // Get responses from mom, templeos and firstgraders - doing
-// Make cart load on every page
