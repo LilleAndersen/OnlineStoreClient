@@ -302,6 +302,12 @@ a
         text-align: center;
         font-size: 25px;
         border-radius: 15px;
+        color: #1A1A1D;
+
+        &:active
+        {
+            color: #1A1A1D;
+        }
     }
 
     a {
@@ -488,13 +494,6 @@ a
 //    border-style: solid;
 //    border-color: #555 transparent transparent transparent;
 //}
-
-.tooltip.active {
-    visibility: visible;
-
-    background-color: papayawhip;
-    color: $accent-middle-black;
-}
 
 a:hover {opacity: .7;} a:active {opacity: .4; transition: none;}
 
