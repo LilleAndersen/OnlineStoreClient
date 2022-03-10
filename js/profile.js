@@ -19,7 +19,7 @@ async function loadProfile() {
 
     userId = localStorage['userId'];
 
-    const allOrders = (await axios.get(api + '/orders/user?id=' + userId)).data
+    const allOrders = (await axios.get(api + '/orders/user?id=' + userId)).data.reverse();
 
     // Loads all orders and puts into html
     for (const order of allOrders)
@@ -81,7 +81,7 @@ async function changeStatus(id) {
 
 // Function to delete a user
 async function deleteUser() {
-    username = window.prompt("Enter your username (NOTE this will permanently delete your user): ");
+    username = window.prompt("Enter your username (NOTE this will permanently delete your user) (NOTE 2 This may not work if you have orders): ");
 
     // Tries given commands and catches the errors if any occur
     try {

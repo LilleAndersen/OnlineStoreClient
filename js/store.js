@@ -23,15 +23,7 @@ async function loadProducts()
                     <p class="card_price">${product.price},00 kr</p>
                     <p class="card_stock">${product.stock} på lager</p>
                 </div>
-                <a class="btn " onclick="addProductToOrder(${product.id}, '${product.name}', '${product.description}', ${product.price}) ">Add to cart</a>
-<!--                <div class="tooltip">-->
-<!--                    Add to cart-->
-<!--                    <div class="tooltiptext">-->
-<!--                        <span >-->
-<!--                            Added to cart-->
-<!--                        </span>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <a class="btn" onclick="addProductToOrder(${product.id}, '${product.name}', '${product.description}', ${product.price}) ">Add to cart</a>
             </div>
         `;
     }
@@ -39,9 +31,6 @@ async function loadProducts()
 
 // Function to add a product to the order
 async function addProductToOrder(productId, productName, productDescription, price) {
-
-    //window.alert("Added to cart");
-
     if (token.length === 0) {
         window.location.href = '/pages/register/';
     } else {
@@ -69,20 +58,3 @@ async function addProductToOrder(productId, productName, productDescription, pri
         localStorage['totalPrice'] = JSON.stringify(totalPrice);
     }
 }
-
-function delay(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
-}
-
-// let tooltip = document.querySelector('.tooltip')
-//
-// tooltip.addEventListener('click', async function () {
-//     if (this.classList.contains('active')) {
-//         this.classList.remove('active');
-//     } else {
-//         this.classList.add('active');
-//         await delay(500);
-//         this.classList.remove('active');
-//     }
-//
-// });

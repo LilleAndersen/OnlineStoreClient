@@ -15,11 +15,15 @@ $accent-dark-pink: #6F2232;
 $accent-middle-pink: #950740;
 $accent-light-pink: #C3073F;
 
-body
+*
 {
-    background: $accent-dark-black;
+    transition: ease 300ms;
     color: papayawhip;
     font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+    background: $accent-dark-black;
 }
 
 a
@@ -376,7 +380,10 @@ a
         text-align: center;
         overflow: hidden;
 
-
+        img
+        {
+            aspect-ratio: 1/1;
+        }
     }
 }
 
@@ -448,41 +455,47 @@ a
 
  // --------------------------
 
-.tooltip {
-    position: relative ;
-    display: inline-block;
+//.tooltip {
+//    position: relative ;
+//    display: inline-block;
+//
+//    cursor: pointer;
+//}
+//
+//.tooltip .tooltiptext {
+//    visibility: hidden;
+//    width: 120px;
+//    background-color: $accent-middle-black;
+//    color: #fff;
+//    text-align: center;
+//    border-radius: 6px;
+//    padding: 5px 0;
+//    position: absolute;
+//    z-index: 100;
+//    bottom: 125%;
+//    left: 50%;
+//    margin-left: -60px;
+//
+//}
+//
+//.tooltip .tooltiptext::after {
+//    content: "";
+//    position: absolute;
+//    top: 100%;
+//    left: 50%;
+//    margin-left: -5px;
+//    border-width: 5px;
+//    border-style: solid;
+//    border-color: #555 transparent transparent transparent;
+//}
 
-    cursor: pointer;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: $accent-middle-black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 100;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-
-}
-
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-.tooltip.active .tooltiptext {
+.tooltip.active {
     visibility: visible;
-    transition: ease 300ms;
+
+    background-color: papayawhip;
+    color: $accent-middle-black;
 }
+
+a:hover {opacity: .7;} a:active {opacity: .4; transition: none;}
+
+a:hover {filter: contrast(1.2) brightness(.8);} a:active {filter: grayscale(100%) contrast(50%);}
