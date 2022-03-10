@@ -32,7 +32,7 @@ async function loadProducts()
 // Function to add a product to the order
 async function addProductToOrder(productId, productName, productDescription, price) {
     if (token.length === 0) {
-        window.location.href = '/pages/register/';
+        window.location.href = '/pages/login/';
     } else {
         let saved = false;
 

@@ -20,6 +20,18 @@ $accent-light-pink: #C3073F;
     transition: ease 300ms;
     color: papayawhip;
     font-family: "Roboto Condensed", sans-serif;
+
+    input
+    {
+        color: #1A1A1D;
+
+        &:active
+        {
+            color: #1A1A1D;
+        }
+    }
+
+
 }
 
 body {
